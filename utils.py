@@ -51,8 +51,6 @@ def concat(list_of_arrays):
       e=e+shape[1]   
     return array_concat
 	
-
-	
 # split train function
 def split_train(x, val_ratio=0.1):
     """
