@@ -62,3 +62,17 @@ def reshape(x):
     d = d.astype(np.int32)
     x_reshaped = np.reshape( x , (shape[0],d,d) )
     return x_reshaped
+	
+# split train function
+def split_train(x, val_ratio=0.1):
+    """
+    x: a numpy ndarray
+    val_ratio: ratio between the size of validation set and x
+    ouputs: x_train, x_val: numpy ndarrays
+    """
+    shape = x.shape
+    ind = np.int32((shape[0])*val_ratio)
+    ind =shape[0]-ind
+    x_train = x[:ind]
+    x_val = x[ind:]
+    return x_train, x_val	
