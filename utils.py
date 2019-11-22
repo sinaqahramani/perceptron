@@ -76,3 +76,16 @@ def split_train(x, val_ratio=0.1):
     x_train = x[:ind]
     x_val = x[ind:]
     return x_train, x_val	
+
+# shuffle function:
+def shuffle(x, y):
+    """
+    x: a numpy nd-array with shape (N, d1, d2, ...)
+    y: a numpy 1d-array with shape (N, )
+    output: x_shuffled and y_shuffled
+    """
+    shape = x.shape
+    newInd = np.arange(0,shape[0])
+    np.random.shuffle(newInd)
+    x_shuffled, y_shuffled = x[newInd],y[newInd]   
+    return x_shuffled, y_shuffled
