@@ -50,3 +50,15 @@ def concat(list_of_arrays):
       s=e
       e=e+shape[1]   
     return array_concat
+	
+# reshape function:
+def reshape(x):
+    """
+    x is an array with shape (N, d*d)
+    output: x_reshaped which is numpy 3d-array with shape (N, d, d)
+    """
+    shape = np.shape(x)
+    d = np.sqrt(shape[1])
+    d = d.astype(np.int32)
+    x_reshaped = np.reshape( x , (shape[0],d,d) )
+    return x_reshaped
