@@ -28,3 +28,25 @@ def load_data(root_path):
     train_labels = np.load(os.path.join(root_path, train_labels_file_name))
     
     return test_data, train_data_list, test_labels, train_labels
+	
+# concat function:
+def concat(list_of_arrays):
+    """
+    list_of_arrays is a non-empty list of numpy arrays (with arbitrary number of dimensions) with the SAME shape
+    output: array_concat which is a numpy ndarray
+    """
+    shape = np.shape(list_of_arrays)
+    newShape = [ shape[0]*shape[1] ]
+    if len(shape)>2:
+      for i in range(2,len(shape)):
+        newShape.append(shape[i])
+    
+    array_concat = np.zeros(newShape)
+    s=0
+    e=shape[1]
+    
+    for i in range(0,shape[0]):
+      array_concat[s:e] = list_of_arrays[i]
+      s=e
+      e=e+shape[1]   
+    return array_concat
