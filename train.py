@@ -47,7 +47,7 @@ for i, (x, y) in enumerate(zip(X_train, y_train)):
 # test
 test_res =  [model.predict(x_test) == y_test for x_test, y_test in zip(X_test, y_test)]
 test_acc = np.sum(test_res) / len(test_res)
-print("-" * 20)
+print("-" * 60)
 print("accuracy on test set: %.2f%%" % (100*test_acc))
 
 plt.plot(val_accs)
