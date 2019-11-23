@@ -44,7 +44,7 @@ for i, (x, y) in enumerate(zip(X_train, y_train)):
 		# verbose:
         print("iteration number %d, accuracy on validation set: %.2f%%" % (i, 100*val_acc))
 
-# test
+# test:
 test_res =  [model.predict(x_test) == y_test for x_test, y_test in zip(X_test, y_test)]
 test_acc = np.sum(test_res) / len(test_res)
 print("-" * 60)
