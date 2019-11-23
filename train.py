@@ -41,7 +41,7 @@ for i, (x, y) in enumerate(zip(X_train, y_train)):
         val_res =  [model.predict(x_val) == y_val for x_val, y_val in zip(X_val, y_val)]
         val_acc = np.sum(val_res) / len(val_res)
         val_accs.append(val_acc*100)  # recording the accuray to be plotted after training 
-		# verbose:
+        # verbose:
         print("iteration number %d, accuracy on validation set: %.2f%%" % (i, 100*val_acc))
 
 # test:
